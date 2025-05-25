@@ -35,4 +35,3 @@
 .vscode/*
 !.vscode/tasks.json
 build/*
-!build/output/

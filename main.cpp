@@ -1,16 +1,16 @@
-#include <iostream>
-#include "portaudio.h"
+#include "AudioHelper.h"
 
-int main(int argc, char ** argv)
+int main()
 {
-    PaError err = Pa_Initialize();
-    if (err != paNoError)
+    try
     {
-        std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        jarvis::audiohelper::AudioHelper audioHelper(1);
+        audioHelper.Record(5); // Record for 5 seconds
+        audioHelper.SaveToWAV("output/output.wav");
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Error: " << e.what();
         return 1;
     }
 
-    std::cout << "PortAudio initialized successfully!" << std::endl;
-    Pa_Terminate();
     return 0;
 }
