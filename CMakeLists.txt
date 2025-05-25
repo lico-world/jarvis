@@ -18,6 +18,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(portaudio)
 
+# Local includes directory
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # Add your executable
 add_executable(Jarvis main.cpp)
 set_target_properties(Jarvis PROPERTIES LINK_FLAGS "-Wl,--subsystem,console")
