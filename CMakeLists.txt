@@ -20,6 +20,7 @@ FetchContent_MakeAvailable(portaudio)
 
 # Add your executable
 add_executable(Jarvis main.cpp)
+set_target_properties(Jarvis PROPERTIES LINK_FLAGS "-Wl,--subsystem,console")
 
 # Link with PortAudio
 target_link_libraries(Jarvis PRIVATE portaudio)
