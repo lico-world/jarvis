@@ -27,7 +27,7 @@
       "command": "powershell",
       "args": [
         "-Command",
-        "./build/Jarvis.exe"
+        "cd build; ./Jarvis.exe"
       ],
       "problemMatcher": [],
       "group": "test",
